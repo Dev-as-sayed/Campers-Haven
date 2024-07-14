@@ -1,0 +1,36 @@
+[
+  {
+    "user_id": 1,
+    "username": "john_doe",
+    "role": "admin",
+    "email": "john.doe@example.com",
+    "password_hash": "$2y$12$eImiTXuWVxfM37uY4JANjQ==",
+    "full_name": "John Doe",
+    "phone_number": "123-456-7890",
+    "profile_image": "",
+    "orders_id": [],
+    "status": "active",
+    "isDelete": false,
+    "created_at": "2024-07-13T10:00:00Z"
+  },
+  {
+    "product_id": 1,
+    "name": "Wireless Mouse",
+    "description": "Ergonomic wireless mouse with adjustable DPI.",
+    "price": 25.99,
+    "offers_price": 24,
+    "stock_quantity": 100,
+    "status": "on-sell",
+    "offerd": true,
+    "total_sell": 1,
+    "created_at": "2024-07-13T12:00:00Z"
+  },
+  {
+    "order_id": 1,
+    "product_id": [],
+    "user_id": 1,
+    "total_amount": 71.98,
+    "status": "Processing",
+    "created_at": "2024-07-13T13:00:00Z"
+  }
+]
