@@ -3,15 +3,23 @@ import { RootState } from "../../store";
 
 const initialState = {};
 
-export const counterSlice = createSlice({
-  name: "product",
+export const productsSlice = createSlice({
+  name: "products",
   initialState,
-  reducers: {},
+  reducers: {
+    products: (state, actions) => {
+      state = actions.payload;
+      console.log(state);
+    },
+  },
 });
 
-export const {} = counterSlice.actions;
+export const { products } = productsSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectCount = (state: RootState) => state.counter.value;
+// export const selectCount = (state: RootState) => state.counter.value;
+export const selectProducts = (state: RootState) => state.products;
 
-export default counterSlice.reducer;
+console.log(selectProducts);
+
+export default productsSlice.reducer;

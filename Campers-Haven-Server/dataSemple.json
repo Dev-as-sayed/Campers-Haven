@@ -11,11 +11,20 @@
     "orders_id": [],
     "status": "active",
     "isDelete": false,
+    "address": "123 Main Street, Anytown, USA",
     "created_at": "2024-07-13T10:00:00Z"
   },
   {
+    "id": 8,
+    "name": "Clothing and Footwear",
+    "description": "Outdoor clothing and footwear to keep you comfortable and protected.",
+    "image": "clothing_footwear_category.jpg"
+  },
+  {
     "product_id": 1,
+    "category": "Tents",
     "name": "Wireless Mouse",
+    "images": ["tent1.jpg", "tent2.jpg"],
     "description": "Ergonomic wireless mouse with adjustable DPI.",
     "price": 25.99,
     "offers_price": 24,
@@ -23,14 +32,32 @@
     "status": "on-sell",
     "offerd": true,
     "total_sell": 1,
-    "created_at": "2024-07-13T12:00:00Z"
+    "ratings": 4.5
   },
   {
     "order_id": 1,
-    "product_id": [],
     "user_id": 1,
-    "total_amount": 71.98,
-    "status": "Processing",
-    "created_at": "2024-07-13T13:00:00Z"
+    "products": [
+      {
+        "product_id": 1,
+        "quantity": 1
+      },
+      {
+        "product_id": 2,
+        "quantity": 2
+      }
+    ],
+    "total_price": 250.0,
+    "status": "Pending",
+    "order_date": "2024-07-25"
+  },
+  {
+    "payment_id": 1,
+    "order_id": 1,
+    "user_id": 1,
+    "amount": 250.0,
+    "method": "Cash on Delivery",
+    "status": "Pending",
+    "payment_date": null
   }
 ]

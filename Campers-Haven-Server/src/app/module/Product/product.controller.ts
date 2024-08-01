@@ -16,15 +16,31 @@ const addProduct = catchAsync(async (req, res) => {
 });
 
 const getProuduct = catchAsync(async (req, res) => {
-  const result = await ProductServices.getProductFormDB();
+  const quarys = req.query;
+
+  const result = await ProductServices.getProductFormDB(quarys);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: "Bookings retrieved successfully",
+    message: "Product retrieved successfully",
+    data: result,
+  });
+});
+
+const getSingleProduct = catchAsync(async (req, res) => {
+  const productId = req.params.id;
+
+  const result = await ProductServices.getSingleProductFromDB(productId);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "Single product retrieved successfully",
     data: result,
   });
 });
 export const ProductController = {
   addProduct,
   getProuduct,
+  getSingleProduct,
 };
