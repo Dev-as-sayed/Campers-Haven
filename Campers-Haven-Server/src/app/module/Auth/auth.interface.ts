@@ -14,3 +14,9 @@ export type TUser = {
   isDleted: boolean;
   address: string;
 };
+
+export type TLoginInfo = {
+  username?: string;
+  email?: string;
+  password: string;
+};

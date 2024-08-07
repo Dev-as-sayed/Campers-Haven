@@ -31,4 +31,8 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
+// userSchema.static.isPasswordMatched =async function name(plainTextPassword, hashPassword) {
+//     return await bcrypt.compare(plainTextPassword, hashPassword);
+// }
+
 export let UsersModel = mongoose.model("Users", userSchema);
