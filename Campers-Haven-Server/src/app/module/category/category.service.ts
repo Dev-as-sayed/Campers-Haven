@@ -3,6 +3,8 @@ import { CategoryModel } from "./category.mode";
 
 const getCategoryFromDB = async () => {
   const result = await CategoryModel.find();
+  console.log(result);
+
   return result;
 };
 

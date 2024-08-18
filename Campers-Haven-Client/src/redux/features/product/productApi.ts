@@ -9,7 +9,6 @@ const productApi = baseApi.injectEndpoints({
           method: "GET",
         };
       },
-      transformResponse: (response: { data: any }) => response.data,
     }),
   }),
 });

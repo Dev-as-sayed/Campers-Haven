@@ -29,49 +29,43 @@ const registerUserOnDB = async (userData: Partial<TUser>) => {
 const loginUserOnDB = async (payloade: TLoginInfo) => {
   const { email, password, username } = payloade;
 
-  try {
-    const user = await UsersModel.findOne({ email });
+  const user = await UsersModel.findOne({ email });
 
-    if (!user) {
-      throw new AppError(httpStatus.NOT_FOUND, "Invelid identity");
-    }
-    if (user?.isDleted) {
-      throw new AppError(httpStatus.FORBIDDEN, "User is deleted");
-    }
-
-    if (!(await bcrypt.compare(password, user.password))) {
-      console.log("password dose not match");
-      throw new AppError(httpStatus.NOT_FOUND, "Invalid email or password");
-    }
-
-    user.password = "";
-
-    const jwtPayloade = {
-      _id: user?._id,
-      email: user?.email,
-      role: user?.role,
-    };
-
-    const accessToken = createToken(
-      jwtPayloade,
-      config.jwt_access_secret as string,
-      config.jwt_access_expires_in as string
-    );
-
-    const refreshToken = createToken(
-      jwtPayloade,
-      config.jwt_refresh_secret as string,
-      config.jwt_refresh_expires_in as string
-    );
-
-    console.log(user, accessToken, refreshToken);
-
-    return { user, accessToken, refreshToken };
-  } catch (error) {
-    console.log("error log form catch", error);
-
-    return error;
+  if (!user) {
+    throw new AppError(httpStatus.NOT_FOUND, "Invelid identity");
   }
+  if (user?.isDleted) {
+    throw new AppError(httpStatus.FORBIDDEN, "User is deleted");
+  }
+
+  if (!(await bcrypt.compare(password, user.password))) {
+    console.log("password dose not match");
+    throw new AppError(httpStatus.NOT_FOUND, "Invalid email or password");
+  }
+
+  user.password = "";
+
+  const jwtPayloade = {
+    _id: user?._id,
+    email: user?.email,
+    role: user?.role,
+  };
+
+  const accessToken = createToken(
+    jwtPayloade,
+    config.jwt_access_secret as string,
+    config.jwt_access_expires_in as string
+  );
+
+  const refreshToken = createToken(
+    jwtPayloade,
+    config.jwt_refresh_secret as string,
+    config.jwt_refresh_expires_in as string
+  );
+
+  console.log(user, accessToken, refreshToken);
+
+  return { user, accessToken, refreshToken };
 };
 
 export const AuthServices = {
