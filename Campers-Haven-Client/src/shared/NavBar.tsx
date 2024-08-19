@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import ActiveRoutes from "../routes/ActiveRoutes";
+// import logo from "./../assets/logo.png";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,7 +31,18 @@ const NavBar = () => {
           to="/"
           className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-lemon-10 md:p-0 md:dark:hover:text-lemon-10 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
         >
-          Home
+          Products
+        </ActiveRoutes>
+      </li>
+      <li>
+        <ActiveRoutes
+          onClick={() => {
+            setIsMenuOpen(false);
+          }}
+          to="/"
+          className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-lemon-10 md:p-0 md:dark:hover:text-lemon-10 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+        >
+          About Us
         </ActiveRoutes>
       </li>
     </>
@@ -43,9 +55,13 @@ const NavBar = () => {
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          {/* <img src={logo} className="h-8 xm:h-10" alt="Logo" /> */}
-          <span className="self-center xm:hidden sm:block text-2xl font-semibold whitespace-nowrap text-white">
-            TeachFosys
+          {/* <img
+            src={logo}
+            className="h-8 xm:h-10 shadow-2xl shadow-white"
+            alt="Logo"
+          /> */}
+          <span className="self-center sm:block text-2xl font-semibold whitespace-nowrap text-white">
+            CampersHaven
           </span>
         </NavLink>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
