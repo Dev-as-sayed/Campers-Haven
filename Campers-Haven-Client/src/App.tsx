@@ -1,17 +1,25 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "./shared/NavBar";
-import { Layout } from "antd";
-import { Content, Footer } from "antd/es/layout/layout";
+// import { Layout } from "antd";
+// import { Content, Footer } from "antd/es/layout/layout";
 
 function App() {
   return (
-    <Layout>
-      <NavBar />
-      <Content>
+    <div>
+      <div>
+        <NavBar />
+      </div>
+      <div>
         <Outlet />
-      </Content>
-      <Footer>Footer</Footer>
-    </Layout>
+      </div>
+    </div>
+    // <Layout>
+    //   <NavBar />
+    //   <Content>
+    //     <Outlet />
+    //   </Content>
+    //   <Footer>Footer</Footer>
+    // </Layout>
   );
 }
 

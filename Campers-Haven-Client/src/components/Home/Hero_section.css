@@ -1,0 +1,22 @@
+.hero-header {
+  background-size: cover;
+  -webkit-background: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.octagon {
+  width: 300px;
+  height: 300px;
+  clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
+  object-fit: cover;
+}
