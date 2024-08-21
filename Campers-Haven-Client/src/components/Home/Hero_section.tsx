@@ -1,8 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import hero_image from "./../../assets/Home/hero_section.jpeg";
-// import hero_image2 from "./../../assets/Home/hero-section2.jpeg";
 import "./Hero_section.css";
-import { Carousel } from "antd";
 import { useRef } from "react";
 import { fadeIn } from "../../Variants";
 
@@ -37,7 +35,6 @@ const Hero_section: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* hero man picture hidden md:block lg:block */}
         <motion.figure
           variants={fadeIn("down", 0.2)}
           animate={isInView ? "show" : "hidden"}

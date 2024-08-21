@@ -14,5 +14,3 @@ const productApi = baseApi.injectEndpoints({
 });
 
 export const { useProductsQuery } = productApi;
-
-console.log(useProductsQuery);
