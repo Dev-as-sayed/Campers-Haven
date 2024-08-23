@@ -12,10 +12,11 @@ const productApi = baseApi.injectEndpoints({
       },
     }),
     products: builder.query({
-      query: () => {
+      query: (query) => {
         return {
           url: "/product/get-products",
           method: "GET",
+          params: query,
         };
       },
     }),

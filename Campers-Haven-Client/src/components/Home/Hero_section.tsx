@@ -22,10 +22,10 @@ const Hero_section: React.FC = () => {
         >
           <div>
             <div className="flex flex-col gap-4">
-              <h2 className="masked-text text-3xl md:text-4xl lg:text-5xl font-bold leading-[50px] md:leading-[60px] lg:leading-[60px] ">
+              <h2 className="masked-text font-serif text-3xl md:text-4xl lg:text-5xl font-bold leading-[50px] md:leading-[60px] lg:leading-[60px] ">
                 Explore the Wilderness with Confidence
               </h2>
-              <p className="text-white text-base lg:text-lg md:text-lg leading-7">
+              <p className="text-white font-thin text-base lg:text-lg md:text-lg leading-7">
                 Get ready for your next adventure with top-quality camping gear.
                 From durable tents to essential survival kits, our selection has
                 everything you need for a successful trip. Explore our range and

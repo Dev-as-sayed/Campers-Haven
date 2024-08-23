@@ -2,12 +2,6 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    // screens: {
-    //   xm: "300px",
-    //   sm: "420px",
-    //   md: "1024px",
-    //   lg: "1280px",
-    // },
     extend: {
       colors: {
         primary: {
