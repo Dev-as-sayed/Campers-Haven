@@ -11,6 +11,14 @@ const orderApi = baseApi.injectEndpoints({
         };
       },
     }),
+    getOrders: builder.query({
+      query: () => {
+        return {
+          url: "",
+          method: "GET",
+        };
+      },
+    }),
   }),
 });
 
