@@ -1,4 +1,4 @@
-import { baseApi } from "../../api/baseApi";
+import { baseApi } from "../../baseApi";
 
 const productApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
@@ -20,7 +20,19 @@ const productApi = baseApi.injectEndpoints({
         };
       },
     }),
+    getSingleProduct: builder.query({
+      query: (id) => {
+        return {
+          url: `/product/${id}`,
+          method: "GET",
+        };
+      },
+    }),
   }),
 });
 
-export const { useProductsQuery, useAddProductsMutation } = productApi;
+export const {
+  useProductsQuery,
+  useAddProductsMutation,
+  useGetSingleProductQuery,
+} = productApi;

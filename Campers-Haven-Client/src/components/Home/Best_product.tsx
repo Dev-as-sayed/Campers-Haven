@@ -1,9 +1,19 @@
 import React from "react";
-import { useProductsQuery } from "../../redux/features/product/productApi";
-import Cards from "../Products/card";
+import {
+  useGetSingleProductQuery,
+  useProductsQuery,
+} from "../../redux/features/product/productApi";
+// import Cards from "../Products/card";
 import "./Hero_section.css";
+import { useGetCategorysQuery } from "../../redux/features/category/categorysApi";
 const Best_product: React.FC = () => {
-  const { data, isError, isLoading } = useProductsQuery({ offered: "offerd" });
+  // const { data, isError, isLoading } = useProductsQuery({ offered: "offerd" });
+
+  const { data, isError, isLoading } = useGetSingleProductQuery(
+    "66c2072700a5e286979b1506"
+  );
+
+  // const { data, isError, isLoading } = useGetCategorysQuery(undefined);
 
   console.log(data);
 

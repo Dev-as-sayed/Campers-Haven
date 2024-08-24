@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { baseApi } from "./api/baseApi";
+import { baseApi } from "./baseApi";
 import {
   FLUSH,
   PAUSE,
@@ -11,19 +11,44 @@ import {
 import persistReducer from "redux-persist/es/persistReducer";
 import storage from "redux-persist/lib/storage";
 import productRedusers from "./features/product/productSlice";
+import categorysRedusers from "./features/category/categorySlice";
+import ordersRedusers from "./features/order/orderSlice";
 import persistStore from "redux-persist/es/persistStore";
-// ...
 
-const persistConfig = {
+const productPersistConfig = {
   key: "products",
   storage,
 };
-const persistProductReducers = persistReducer(persistConfig, productRedusers);
+const persistProductReducers = persistReducer(
+  productPersistConfig,
+  productRedusers
+);
+
+const categorysPersistCofig = {
+  key: "categorys",
+  storage,
+};
+const persistCategorysReducers = persistReducer(
+  categorysPersistCofig,
+  categorysRedusers
+);
+
+const ordersPersistConfig = {
+  key: "orders",
+  storage,
+};
+
+const persistOrdersReducers = {
+  ordersPersistConfig,
+  ordersRedusers,
+};
 
 export const store = configureStore({
   reducer: {
     [baseApi.reducerPath]: baseApi.reducer,
     products: persistProductReducers,
+    categorys: persistCategorysReducers,
+    orders: persistOrdersReducers,
   },
   middleware: (getDefaultMiddlewares) =>
     getDefaultMiddlewares({

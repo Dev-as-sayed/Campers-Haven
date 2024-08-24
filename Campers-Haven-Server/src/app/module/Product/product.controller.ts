@@ -30,6 +30,10 @@ const getProuduct = catchAsync(async (req, res) => {
 const getSingleProduct = catchAsync(async (req, res) => {
   const productId = req.params.id;
 
+  console.log("hit the get Single porduct api");
+
+  console.log(productId);
+
   const result = await ProductServices.getSingleProductFromDB(productId);
 
   sendResponse(res, {

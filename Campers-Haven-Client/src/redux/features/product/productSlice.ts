@@ -9,7 +9,6 @@ export const productsSlice = createSlice({
   reducers: {
     products: (state, actions) => {
       state = actions.payload;
-      console.log(state);
     },
   },
 });
@@ -17,9 +16,6 @@ export const productsSlice = createSlice({
 export const { products } = productsSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-// export const selectCount = (state: RootState) => state.counter.value;
 export const selectProducts = (state: RootState) => state.products;
-
-console.log(selectProducts);
 
 export default productsSlice.reducer;
