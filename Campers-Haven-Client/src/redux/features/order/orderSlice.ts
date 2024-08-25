@@ -13,6 +13,6 @@ export const orderSlice = createSlice({
 
 export const { orders } = orderSlice.actions;
 
-export const selectOrders = (state: RootState) => state.categorys;
+export const selectOrders = (state: RootState) => state.orders;
 
 export default orderSlice.reducer;

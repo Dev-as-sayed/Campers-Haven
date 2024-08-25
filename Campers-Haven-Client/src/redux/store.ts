@@ -13,7 +13,14 @@ import storage from "redux-persist/lib/storage";
 import productRedusers from "./features/product/productSlice";
 import categorysRedusers from "./features/category/categorySlice";
 import ordersRedusers from "./features/order/orderSlice";
+import authRedusers from "./features/auth/authSlice";
 import persistStore from "redux-persist/es/persistStore";
+
+const authPersistConfig = {
+  key: "auth",
+  storage,
+};
+const persistAuthReducers = persistReducer(authPersistConfig, authRedusers);
 
 const productPersistConfig = {
   key: "products",
@@ -37,11 +44,10 @@ const ordersPersistConfig = {
   key: "orders",
   storage,
 };
-
-const persistOrdersReducers = {
+const persistOrdersReducers = persistReducer(
   ordersPersistConfig,
-  ordersRedusers,
-};
+  ordersRedusers
+);
 
 export const store = configureStore({
   reducer: {
@@ -49,6 +55,7 @@ export const store = configureStore({
     products: persistProductReducers,
     categorys: persistCategorysReducers,
     orders: persistOrdersReducers,
+    auth: persistAuthReducers,
   },
   middleware: (getDefaultMiddlewares) =>
     getDefaultMiddlewares({
