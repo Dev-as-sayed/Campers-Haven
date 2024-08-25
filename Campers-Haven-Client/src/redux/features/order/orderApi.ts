@@ -19,6 +19,14 @@ const orderApi = baseApi.injectEndpoints({
         };
       },
     }),
+    getMyOredrs: builder.query({
+      query: (id) => {
+        return {
+          url: `/orders/${id}`,
+          method: "GET",
+        };
+      },
+    }),
   }),
 });
 

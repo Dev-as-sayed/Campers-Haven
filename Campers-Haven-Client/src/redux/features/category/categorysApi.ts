@@ -19,6 +19,14 @@ const categorysApi = baseApi.injectEndpoints({
         };
       },
     }),
+    getSingelCategory: builder.query({
+      query: (id) => {
+        return {
+          url: `/category/${id}`,
+          method: "GET",
+        };
+      },
+    }),
   }),
 });
 
