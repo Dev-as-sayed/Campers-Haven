@@ -7,7 +7,7 @@ const Cards: React.FC = (products) => {
   return (
     <>
       {products ? (
-        <div className="overflow-hidden rounded bg-transparent text-slate-500 w-64 ">
+        <div className="overflow-hidden rounded bg-transparent text-slate-500 w-60 ">
           <Carousel>
             {images.map((img: string) => (
               <figure>

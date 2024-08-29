@@ -38,7 +38,7 @@ const Hero_section: React.FC = () => {
         <motion.figure
           variants={fadeIn("down", 0.2)}
           animate={isInView ? "show" : "hidden"}
-          className="w-1/2 items-center justify-center lg:flex md:flex "
+          className="hidden md:visible lg:visible w-1/2 items-center justify-center lg:flex md:flex "
         >
           <img src={hero_image} className=" octagon" alt="" />
         </motion.figure>

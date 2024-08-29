@@ -3,7 +3,12 @@ import { RootState } from "../../store";
 
 export const categorySlice = createSlice({
   name: "categorys",
-  initialState: {},
+  initialState: {
+    _id: Number,
+    name: String,
+    description: String,
+    image: String,
+  },
   reducers: {
     categorys: (state, actions) => {
       state = actions.payload;

@@ -28,7 +28,7 @@ const Best_product: React.FC = () => {
                 <Loader />
               </div>
             ) : (
-              <div className="grid grid-cols-1 mt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <div className="w-fit mx-auto grid grid-cols-1 mt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {data?.data.map((item: { _id: string }) => (
                   <Cards key={item._id} Products={item} />
                 ))}
