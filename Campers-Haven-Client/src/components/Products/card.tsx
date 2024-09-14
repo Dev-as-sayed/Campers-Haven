@@ -1,4 +1,5 @@
 import { Carousel } from "antd";
+import { Link } from "react-router-dom";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Cards: React.FC = (products) => {
@@ -43,9 +44,11 @@ const Cards: React.FC = (products) => {
             <div className="w-fit text-right">
               <button className="text-primary-500 text-xl">+</button>
               <br />
-              <button className="underline hover:text-emerald-400">
-                Detail
-              </button>
+              <Link to={`/product/${_id}`}>
+                <button className="underline hover:text-emerald-400">
+                  Detail
+                </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -3,31 +3,34 @@ import { useRef } from "react";
 import { fadeIn } from "../../Variants";
 import { useGetCategorysQuery } from "../../redux/features/category/categorysApi";
 import Loader from "../Loader/Loader";
+import { Link } from "react-router-dom";
 
 const Categorys = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
 
-  const { data, isError, isLoading } = useGetCategorysQuery();
+  const { data, isLoading } = useGetCategorysQuery(undefined);
 
   const Category = ({ categoryData }) => {
-    console.log(categoryData);
-    const { name, description, image } = categoryData;
+    // console.log(categoryData);
+    const { _id, name, description, image } = categoryData;
 
     return (
-      <div className="w-64 h-56 overflow-hidden bg-primary-50 p-4 rounded-md shadow-lg shadow-primary-300 hover:border-2 hover:border-primary-400">
-        <figure>
-          <img
-            src={image}
-            alt={`${name} image`}
-            className="w-24 h-24 rounded-sm border-2 border-primary-200 shadow-xl"
-          />
-        </figure>
-        <div className="mt-2">
-          <h3 className="text-xl font-semibold">{name}</h3>
-          <p className="text-primary-700 ">{description} </p>
+      <Link to={`/${_id}`}>
+        <div className="w-64 h-56 overflow-hidden bg-primary-50 p-4 rounded-md shadow-lg shadow-primary-300 hover:border-2 hover:border-primary-400">
+          <figure>
+            <img
+              src={image}
+              alt={`${name} image`}
+              className="w-24 h-24 rounded-sm border-2 border-primary-200 shadow-xl"
+            />
+          </figure>
+          <div className="mt-2">
+            <h3 className="text-xl font-semibold">{name}</h3>
+            <p className="text-primary-700 ">{description} </p>
+          </div>
         </div>
-      </div>
+      </Link>
     );
   };
   return (
